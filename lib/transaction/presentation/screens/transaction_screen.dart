@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../../../core/presentation/utils/riverpod_framework.dart';
 import '../components/transaction_tab_bar_component.dart';
-import '../providers/transaction_tabs_provider.dart';
+
 import 'users_screen.dart';
 import 'posts_screen.dart';
 
@@ -13,13 +14,11 @@ class TabBarScreen extends StatefulHookConsumerWidget {
   ConsumerState<TabBarScreen> createState() => _TabBarScreenState();
 }
 
-class _TabBarScreenState extends ConsumerState<TabBarScreen>
-    with SingleTickerProviderStateMixin {
+class _TabBarScreenState extends ConsumerState<TabBarScreen> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    final transactionTabs = ref.watch(transactionTabsProvider);
     final controller = useTabController(
-      initialLength: transactionTabs.length,
+      initialLength: 2,
       vsync: this,
     );
     final scrollViewController = useScrollController();
@@ -39,7 +38,6 @@ class _TabBarScreenState extends ConsumerState<TabBarScreen>
           children: [
             TransactionTabBarComponent(
               controller: controller,
-              transactionTabs: transactionTabs,
             ),
             Expanded(
               child: TabBarView(

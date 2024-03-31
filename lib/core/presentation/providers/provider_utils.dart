@@ -1,13 +1,9 @@
 // ignore_for_file: depend_on_referenced_packages, implementation_imports
 
-import 'dart:async';
-
 import 'package:dio/dio.dart';
 import 'package:riverpod/src/notifier.dart' as notifier;
 
 import '../utils/riverpod_framework.dart';
-
-export 'package:test_dio/core/presentation/utils/event.dart';
 
 part '../extensions/auto_dispose_ref_extension.dart';
 

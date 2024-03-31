@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../core_features/theme/presentation/utils/app_static_colors.dart';
-import '../styles/styles.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
     required this.onPressed,
     required this.child,
+    super.key,
     this.onLongPress,
     this.padding = const EdgeInsets.all(20),
     this.constraints,
@@ -15,10 +14,13 @@ class CustomElevatedButton extends StatelessWidget {
     this.isBorder = false,
     this.shadowColor,
     this.enableGradient = false,
-    this.gradient = AppStaticColors.primaryIngredientColor,
+    this.gradient = const LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [Color(0xff413a70), Color(0xff121114)],
+    ),
     this.elevation = 0,
-    super.key,
-    this.disabledBackgroundColor = AppStaticColors.darkGrey,
+    this.disabledBackgroundColor = const Color(0xFFC5C4CC),
   });
 
   final VoidCallback? onPressed;
@@ -36,11 +38,9 @@ class CustomElevatedButton extends StatelessWidget {
   final double elevation;
   final bool isBorder;
 
-  BorderRadius get _borderRadius =>
-      borderRadius ?? BorderRadius.circular(Sizes.buttonR32);
+  BorderRadius get _borderRadius => borderRadius ?? BorderRadius.circular(33);
 
-  Color? get _buttonColor =>
-      enableGradient ? const Color(0xFF413A70) : buttonColor;
+  Color? get _buttonColor => enableGradient ? const Color(0xFF413A70) : buttonColor;
 
   @override
   Widget build(BuildContext context) {
@@ -60,8 +60,7 @@ class CustomElevatedButton extends StatelessWidget {
       child: Ink(
         decoration: BoxDecoration(
           borderRadius: _borderRadius,
-          border:
-              isBorder ? Border.all(color: AppStaticColors.darkWhite) : null,
+          border: isBorder ? Border.all(color: const Color(0xFFD4D3DB)) : null,
           gradient: enableGradient ? gradient : null,
         ),
         child: Container(

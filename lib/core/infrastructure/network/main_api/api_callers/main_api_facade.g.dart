@@ -13,9 +13,8 @@ String _$mainApiFacadeHash() => r'0014355115f275fa09bdd5ad13f5d4d91d71ad1f';
 final mainApiFacadeProvider = Provider<MainApiFacade>.internal(
   mainApiFacade,
   name: r'mainApiFacadeProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$mainApiFacadeHash,
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$mainApiFacadeHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

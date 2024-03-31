@@ -10,8 +10,7 @@ class Posts with _$Posts {
     required IList<Post> items,
   }) = _Posts;
   Posts._();
-  factory Posts.fromJson(List<dynamic> json) =>
-      _$PostsFromJson({'items': json});
+  factory Posts.fromJson(List<dynamic> json) => _$PostsFromJson({'items': json});
 }
 
 @freezed

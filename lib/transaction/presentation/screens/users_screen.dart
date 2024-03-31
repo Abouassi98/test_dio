@@ -1,9 +1,7 @@
+import 'package:flutter/material.dart';
 import '../../../core/presentation/widgets/custom_elevated_button.dart';
 import '../widgets/user_item.dart';
-import 'package:flutter/widgets.dart';
-import '../../../../core/presentation/styles/styles.dart';
 import '../../../../core/presentation/utils/riverpod_framework.dart';
-import '../components/transaction_item_loading.dart';
 import '../providers/get_users_provider.dart';
 
 class UsersScreen extends HookConsumerWidget {
@@ -15,8 +13,8 @@ class UsersScreen extends HookConsumerWidget {
 
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: Sizes.screenPaddingH16,
-        vertical: Sizes.marginV16,
+        horizontal: 16,
+        vertical: 16,
       ),
       child: Column(
         children: [
@@ -31,7 +29,7 @@ class UsersScreen extends HookConsumerWidget {
                     );
                   },
                   separatorBuilder: (context, index) {
-                    return const SizedBox(height: Sizes.marginV36);
+                    return const SizedBox(height: 36);
                   },
                   itemCount: list.items.length,
                 ),
@@ -40,10 +38,10 @@ class UsersScreen extends HookConsumerWidget {
             error: (obj, st) {
               return CustomElevatedButton(
                 onPressed: () => ref.invalidate(getUsersProvider),
-                child: Text(
-                  'retry',
+                child: const Text(
+                  'Retry',
+                  style: TextStyle(color: Colors.white),
                   textAlign: TextAlign.center,
-                  style: TextStyles.coloredElevatedButton,
                 ),
               );
             },
@@ -51,9 +49,8 @@ class UsersScreen extends HookConsumerWidget {
               return Expanded(
                 child: ListView.separated(
                   itemBuilder: (context, index) =>
-                      const TransactionItemLoadingWidget(),
-                  separatorBuilder: (context, index) =>
-                      const SizedBox(height: Sizes.marginV24),
+                      const Center(child: CircularProgressIndicator.adaptive()),
+                  separatorBuilder: (context, index) => const SizedBox(height: 24),
                   itemCount: 3,
                 ),
               );

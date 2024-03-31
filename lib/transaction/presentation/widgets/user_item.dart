@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../core/presentation/styles/styles.dart';
 import '../../domain/transaction_history/users/users.dart';
 
 class BokRechargeItem extends StatelessWidget {
@@ -21,16 +20,12 @@ class BokRechargeItem extends StatelessWidget {
                   Expanded(
                     child: Text(
                       item.name,
-                      style: TextStyles.f14(context)
-                          .copyWith(fontWeight: FontStyles.fontWeightNormal),
                     ),
                   ),
                   Expanded(
                     child: Text(
                       item.email,
                       textAlign: TextAlign.end,
-                      style: TextStyles.f12(context)
-                          .copyWith(fontWeight: FontStyles.fontWeightNormal),
                     ),
                   ),
                 ],
@@ -38,7 +33,7 @@ class BokRechargeItem extends StatelessWidget {
               Wrap(
                 crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
-                  const SizedBox(width: Sizes.paddingH6),
+                  const SizedBox(width: 6),
                   Card(
                     color: Colors.red,
                     shape: RoundedRectangleBorder(
@@ -49,8 +44,6 @@ class BokRechargeItem extends StatelessWidget {
                       child: Text(
                         item.status,
                         textAlign: TextAlign.right,
-                        style: TextStyles.f10(context)
-                            .copyWith(color: Colors.white),
                       ),
                     ),
                   ),

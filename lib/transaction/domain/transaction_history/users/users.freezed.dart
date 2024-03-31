@@ -29,15 +29,13 @@ mixin _$Users {
 
 /// @nodoc
 abstract class $UsersCopyWith<$Res> {
-  factory $UsersCopyWith(Users value, $Res Function(Users) then) =
-      _$UsersCopyWithImpl<$Res, Users>;
+  factory $UsersCopyWith(Users value, $Res Function(Users) then) = _$UsersCopyWithImpl<$Res, Users>;
   @useResult
   $Res call({IList<User> items});
 }
 
 /// @nodoc
-class _$UsersCopyWithImpl<$Res, $Val extends Users>
-    implements $UsersCopyWith<$Res> {
+class _$UsersCopyWithImpl<$Res, $Val extends Users> implements $UsersCopyWith<$Res> {
   _$UsersCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -61,8 +59,7 @@ class _$UsersCopyWithImpl<$Res, $Val extends Users>
 
 /// @nodoc
 abstract class _$$UsersImplCopyWith<$Res> implements $UsersCopyWith<$Res> {
-  factory _$$UsersImplCopyWith(
-          _$UsersImpl value, $Res Function(_$UsersImpl) then) =
+  factory _$$UsersImplCopyWith(_$UsersImpl value, $Res Function(_$UsersImpl) then) =
       __$$UsersImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -70,11 +67,9 @@ abstract class _$$UsersImplCopyWith<$Res> implements $UsersCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UsersImplCopyWithImpl<$Res>
-    extends _$UsersCopyWithImpl<$Res, _$UsersImpl>
+class __$$UsersImplCopyWithImpl<$Res> extends _$UsersCopyWithImpl<$Res, _$UsersImpl>
     implements _$$UsersImplCopyWith<$Res> {
-  __$$UsersImplCopyWithImpl(
-      _$UsersImpl _value, $Res Function(_$UsersImpl) _then)
+  __$$UsersImplCopyWithImpl(_$UsersImpl _value, $Res Function(_$UsersImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -96,8 +91,7 @@ class __$$UsersImplCopyWithImpl<$Res>
 class _$UsersImpl extends _Users {
   _$UsersImpl({required this.items}) : super._();
 
-  factory _$UsersImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UsersImplFromJson(json);
+  factory _$UsersImpl.fromJson(Map<String, dynamic> json) => _$$UsersImplFromJson(json);
 
   @override
   final IList<User> items;
@@ -117,8 +111,7 @@ class _$UsersImpl extends _Users {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(items));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(items));
 
   @JsonKey(ignore: true)
   @override
@@ -144,8 +137,7 @@ abstract class _Users extends Users {
   IList<User> get items;
   @override
   @JsonKey(ignore: true)
-  _$$UsersImplCopyWith<_$UsersImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UsersImplCopyWith<_$UsersImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 User _$UserFromJson(Map<String, dynamic> json) {
@@ -167,15 +159,13 @@ mixin _$User {
 
 /// @nodoc
 abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res, User>;
+  factory $UserCopyWith(User value, $Res Function(User) then) = _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call({int id, String name, String email, String gender, String status});
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res, $Val extends User>
-    implements $UserCopyWith<$Res> {
+class _$UserCopyWithImpl<$Res, $Val extends User> implements $UserCopyWith<$Res> {
   _$UserCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -219,8 +209,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
 
 /// @nodoc
 abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$UserImplCopyWith(
-          _$UserImpl value, $Res Function(_$UserImpl) then) =
+  factory _$$UserImplCopyWith(_$UserImpl value, $Res Function(_$UserImpl) then) =
       __$$UserImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -228,8 +217,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UserImplCopyWithImpl<$Res>
-    extends _$UserCopyWithImpl<$Res, _$UserImpl>
+class __$$UserImplCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$UserImpl>
     implements _$$UserImplCopyWith<$Res> {
   __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
       : super(_value, _then);
@@ -278,8 +266,7 @@ class _$UserImpl implements _User {
       required this.gender,
       required this.status});
 
-  factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UserImplFromJson(json);
+  factory _$UserImpl.fromJson(Map<String, dynamic> json) => _$$UserImplFromJson(json);
 
   @override
   final int id;
@@ -349,6 +336,5 @@ abstract class _User implements User {
   String get status;
   @override
   @JsonKey(ignore: true)
-  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UserImplCopyWith<_$UserImpl> get copyWith => throw _privateConstructorUsedError;
 }

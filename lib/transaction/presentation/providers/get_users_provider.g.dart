@@ -13,8 +13,7 @@ String _$getUsersHash() => r'cb70df738a2f9e040eb1422545b201139d11de42';
 final getUsersProvider = AutoDisposeFutureProvider<Users>.internal(
   getUsers,
   name: r'getUsersProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$getUsersHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$getUsersHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

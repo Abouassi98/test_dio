@@ -4,15 +4,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'users.freezed.dart';
 part 'users.g.dart';
 
-
 @freezed
 class Users with _$Users {
   factory Users({
     required IList<User> items,
   }) = _Users;
   Users._();
-  factory Users.fromJson(List<dynamic> json) =>
-      _$UsersFromJson({'items': json});
+  factory Users.fromJson(List<dynamic> json) => _$UsersFromJson({'items': json});
 }
 
 @freezed

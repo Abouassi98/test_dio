@@ -41,26 +41,6 @@ class MainApiFacade {
     );
   }
 
-  Future<Response<T>> postData<T>({
-    required String path,
-    Map<String, dynamic>? queryParameters,
-    dynamic data,
-    Options? options,
-    CancelToken? cancelToken,
-  }) async {
-    return _errorHandler(
-      () async {
-        return dio.post(
-          path,
-          queryParameters: queryParameters,
-          data: data,
-          options: options,
-          cancelToken: cancelToken,
-        );
-      },
-    );
-  }
-
   Future<T> _errorHandler<T>(Future<T> Function() body) async {
     try {
       return await body();

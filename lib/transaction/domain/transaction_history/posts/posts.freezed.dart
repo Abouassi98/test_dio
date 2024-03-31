@@ -29,15 +29,13 @@ mixin _$Posts {
 
 /// @nodoc
 abstract class $PostsCopyWith<$Res> {
-  factory $PostsCopyWith(Posts value, $Res Function(Posts) then) =
-      _$PostsCopyWithImpl<$Res, Posts>;
+  factory $PostsCopyWith(Posts value, $Res Function(Posts) then) = _$PostsCopyWithImpl<$Res, Posts>;
   @useResult
   $Res call({IList<Post> items});
 }
 
 /// @nodoc
-class _$PostsCopyWithImpl<$Res, $Val extends Posts>
-    implements $PostsCopyWith<$Res> {
+class _$PostsCopyWithImpl<$Res, $Val extends Posts> implements $PostsCopyWith<$Res> {
   _$PostsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -61,8 +59,7 @@ class _$PostsCopyWithImpl<$Res, $Val extends Posts>
 
 /// @nodoc
 abstract class _$$PostsImplCopyWith<$Res> implements $PostsCopyWith<$Res> {
-  factory _$$PostsImplCopyWith(
-          _$PostsImpl value, $Res Function(_$PostsImpl) then) =
+  factory _$$PostsImplCopyWith(_$PostsImpl value, $Res Function(_$PostsImpl) then) =
       __$$PostsImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -70,11 +67,9 @@ abstract class _$$PostsImplCopyWith<$Res> implements $PostsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PostsImplCopyWithImpl<$Res>
-    extends _$PostsCopyWithImpl<$Res, _$PostsImpl>
+class __$$PostsImplCopyWithImpl<$Res> extends _$PostsCopyWithImpl<$Res, _$PostsImpl>
     implements _$$PostsImplCopyWith<$Res> {
-  __$$PostsImplCopyWithImpl(
-      _$PostsImpl _value, $Res Function(_$PostsImpl) _then)
+  __$$PostsImplCopyWithImpl(_$PostsImpl _value, $Res Function(_$PostsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -96,8 +91,7 @@ class __$$PostsImplCopyWithImpl<$Res>
 class _$PostsImpl extends _Posts {
   _$PostsImpl({required this.items}) : super._();
 
-  factory _$PostsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PostsImplFromJson(json);
+  factory _$PostsImpl.fromJson(Map<String, dynamic> json) => _$$PostsImplFromJson(json);
 
   @override
   final IList<Post> items;
@@ -117,8 +111,7 @@ class _$PostsImpl extends _Posts {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(items));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(items));
 
   @JsonKey(ignore: true)
   @override
@@ -144,8 +137,7 @@ abstract class _Posts extends Posts {
   IList<Post> get items;
   @override
   @JsonKey(ignore: true)
-  _$$PostsImplCopyWith<_$PostsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$PostsImplCopyWith<_$PostsImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Post _$PostFromJson(Map<String, dynamic> json) {
@@ -167,19 +159,13 @@ mixin _$Post {
 
 /// @nodoc
 abstract class $PostCopyWith<$Res> {
-  factory $PostCopyWith(Post value, $Res Function(Post) then) =
-      _$PostCopyWithImpl<$Res, Post>;
+  factory $PostCopyWith(Post value, $Res Function(Post) then) = _$PostCopyWithImpl<$Res, Post>;
   @useResult
-  $Res call(
-      {int id,
-      @JsonKey(name: 'user_id') int userId,
-      String title,
-      String body});
+  $Res call({int id, @JsonKey(name: 'user_id') int userId, String title, String body});
 }
 
 /// @nodoc
-class _$PostCopyWithImpl<$Res, $Val extends Post>
-    implements $PostCopyWith<$Res> {
+class _$PostCopyWithImpl<$Res, $Val extends Post> implements $PostCopyWith<$Res> {
   _$PostCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -218,21 +204,15 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
 
 /// @nodoc
 abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
-  factory _$$PostImplCopyWith(
-          _$PostImpl value, $Res Function(_$PostImpl) then) =
+  factory _$$PostImplCopyWith(_$PostImpl value, $Res Function(_$PostImpl) then) =
       __$$PostImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int id,
-      @JsonKey(name: 'user_id') int userId,
-      String title,
-      String body});
+  $Res call({int id, @JsonKey(name: 'user_id') int userId, String title, String body});
 }
 
 /// @nodoc
-class __$$PostImplCopyWithImpl<$Res>
-    extends _$PostCopyWithImpl<$Res, _$PostImpl>
+class __$$PostImplCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res, _$PostImpl>
     implements _$$PostImplCopyWith<$Res> {
   __$$PostImplCopyWithImpl(_$PostImpl _value, $Res Function(_$PostImpl) _then)
       : super(_value, _then);
@@ -275,8 +255,7 @@ class _$PostImpl implements _Post {
       required this.title,
       required this.body});
 
-  factory _$PostImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PostImplFromJson(json);
+  factory _$PostImpl.fromJson(Map<String, dynamic> json) => _$$PostImplFromJson(json);
 
   @override
   final int id;
@@ -342,6 +321,5 @@ abstract class _Post implements Post {
   String get body;
   @override
   @JsonKey(ignore: true)
-  _$$PostImplCopyWith<_$PostImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$PostImplCopyWith<_$PostImpl> get copyWith => throw _privateConstructorUsedError;
 }

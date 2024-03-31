@@ -3,9 +3,6 @@ import 'package:logging/logging.dart';
 import '../../../../presentation/utils/logger.dart';
 import '../../../../presentation/utils/riverpod_framework.dart';
 import '../../main_api/main_api_config.dart';
-import '../interceptors/content_type_interceptor.dart';
-import '../interceptors/error_interceptor.dart';
-import '../interceptors/response_interceptor.dart';
 
 part 'main_api_dio_providers.g.dart';
 
@@ -16,8 +13,7 @@ Dio mainApiDio(
   MainApiDioRef ref,
 ) {
   final logger = Logger('Dio')..level = Level.FINEST;
-  final sub =
-      logger.onRecord.listen(loggerOnDataCallback(logColor: LogColor.cyan));
+  final sub = logger.onRecord.listen(loggerOnDataCallback(logColor: LogColor.cyan));
   ref.onDispose(sub.cancel);
   final dio = Dio();
   return dio
@@ -27,9 +23,6 @@ Dio mainApiDio(
       receiveTimeout: MainApiConfig.receiveTimeout,
     )
     ..interceptors.addAll([
-      ContentTypeInterceptor(),
-      ref.watch(errorInterceptorProvider),
-      ResponseInterceptor(),
       LogInterceptor(logPrint: logger.finest),
     ]);
 }

@@ -13,8 +13,7 @@ String _$getPostsHash() => r'6cbd2b17cf3259cd634703b1a4617f7e03eef0a0';
 final getPostsProvider = AutoDisposeFutureProvider<Posts>.internal(
   getPosts,
   name: r'getPostsProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$getPostsHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$getPostsHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
