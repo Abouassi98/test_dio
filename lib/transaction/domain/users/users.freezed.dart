@@ -20,7 +20,7 @@ Users _$UsersFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Users {
-  IList<User> get items => throw _privateConstructorUsedError;
+  List<User> get items => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -31,7 +31,7 @@ mixin _$Users {
 abstract class $UsersCopyWith<$Res> {
   factory $UsersCopyWith(Users value, $Res Function(Users) then) = _$UsersCopyWithImpl<$Res, Users>;
   @useResult
-  $Res call({IList<User> items});
+  $Res call({List<User> items});
 }
 
 /// @nodoc
@@ -52,7 +52,7 @@ class _$UsersCopyWithImpl<$Res, $Val extends Users> implements $UsersCopyWith<$R
       items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as IList<User>,
+              as List<User>,
     ) as $Val);
   }
 }
@@ -63,7 +63,7 @@ abstract class _$$UsersImplCopyWith<$Res> implements $UsersCopyWith<$Res> {
       __$$UsersImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({IList<User> items});
+  $Res call({List<User> items});
 }
 
 /// @nodoc
@@ -79,9 +79,9 @@ class __$$UsersImplCopyWithImpl<$Res> extends _$UsersCopyWithImpl<$Res, _$UsersI
   }) {
     return _then(_$UsersImpl(
       items: null == items
-          ? _value.items
+          ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as IList<User>,
+              as List<User>,
     ));
   }
 }
@@ -89,12 +89,19 @@ class __$$UsersImplCopyWithImpl<$Res> extends _$UsersCopyWithImpl<$Res, _$UsersI
 /// @nodoc
 @JsonSerializable()
 class _$UsersImpl extends _Users {
-  _$UsersImpl({required this.items}) : super._();
+  _$UsersImpl({required final List<User> items})
+      : _items = items,
+        super._();
 
   factory _$UsersImpl.fromJson(Map<String, dynamic> json) => _$$UsersImplFromJson(json);
 
+  final List<User> _items;
   @override
-  final IList<User> items;
+  List<User> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_items);
+  }
 
   @override
   String toString() {
@@ -106,12 +113,12 @@ class _$UsersImpl extends _Users {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsersImpl &&
-            const DeepCollectionEquality().equals(other.items, items));
+            const DeepCollectionEquality().equals(other._items, _items));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(items));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_items));
 
   @JsonKey(ignore: true)
   @override
@@ -128,13 +135,13 @@ class _$UsersImpl extends _Users {
 }
 
 abstract class _Users extends Users {
-  factory _Users({required final IList<User> items}) = _$UsersImpl;
+  factory _Users({required final List<User> items}) = _$UsersImpl;
   _Users._() : super._();
 
   factory _Users.fromJson(Map<String, dynamic> json) = _$UsersImpl.fromJson;
 
   @override
-  IList<User> get items;
+  List<User> get items;
   @override
   @JsonKey(ignore: true)
   _$$UsersImplCopyWith<_$UsersImpl> get copyWith => throw _privateConstructorUsedError;

@@ -1,7 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logging/logging.dart';
 import '../../infrastructure/services/logger.dart';
-import '../extensions/app_error_extension.dart';
 
 const _riverpodEmoji = '🏞️ ';
 
@@ -75,7 +74,7 @@ class ProviderCrashlytics extends ProviderObserver {
   ) {
     final isAsyncError = provider is ProviderListenable<AsyncValue>;
     // First condition optimizes the process of determining whether provider logging should be bypassed.
-    if (isAsyncError && error.shouldSkipError) return;
+    if (isAsyncError) return;
 
     _logger.severe(
       '⛔️ ProviderDidFail: ${provider.providerName}\n'

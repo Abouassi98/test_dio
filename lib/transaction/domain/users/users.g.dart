@@ -7,14 +7,13 @@ part of 'users.dart';
 // **************************************************************************
 
 _$UsersImpl _$$UsersImplFromJson(Map<String, dynamic> json) => _$UsersImpl(
-      items: IList<User>.fromJson(
-          json['items'], (value) => User.fromJson(value as Map<String, dynamic>)),
+      items: (json['items'] as List<dynamic>)
+          .map((e) => User.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$UsersImplToJson(_$UsersImpl instance) => <String, dynamic>{
-      'items': instance.items.toJson(
-        (value) => value,
-      ),
+      'items': instance.items,
     };
 
 _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(

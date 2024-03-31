@@ -7,14 +7,13 @@ part of 'posts.dart';
 // **************************************************************************
 
 _$PostsImpl _$$PostsImplFromJson(Map<String, dynamic> json) => _$PostsImpl(
-      items: IList<Post>.fromJson(
-          json['items'], (value) => Post.fromJson(value as Map<String, dynamic>)),
+      items: (json['items'] as List<dynamic>)
+          .map((e) => Post.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$PostsImplToJson(_$PostsImpl instance) => <String, dynamic>{
-      'items': instance.items.toJson(
-        (value) => value,
-      ),
+      'items': instance.items,
     };
 
 _$PostImpl _$$PostImplFromJson(Map<String, dynamic> json) => _$PostImpl(

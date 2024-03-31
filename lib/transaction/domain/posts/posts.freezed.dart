@@ -20,7 +20,7 @@ Posts _$PostsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Posts {
-  IList<Post> get items => throw _privateConstructorUsedError;
+  List<Post> get items => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -31,7 +31,7 @@ mixin _$Posts {
 abstract class $PostsCopyWith<$Res> {
   factory $PostsCopyWith(Posts value, $Res Function(Posts) then) = _$PostsCopyWithImpl<$Res, Posts>;
   @useResult
-  $Res call({IList<Post> items});
+  $Res call({List<Post> items});
 }
 
 /// @nodoc
@@ -52,7 +52,7 @@ class _$PostsCopyWithImpl<$Res, $Val extends Posts> implements $PostsCopyWith<$R
       items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as IList<Post>,
+              as List<Post>,
     ) as $Val);
   }
 }
@@ -63,7 +63,7 @@ abstract class _$$PostsImplCopyWith<$Res> implements $PostsCopyWith<$Res> {
       __$$PostsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({IList<Post> items});
+  $Res call({List<Post> items});
 }
 
 /// @nodoc
@@ -79,9 +79,9 @@ class __$$PostsImplCopyWithImpl<$Res> extends _$PostsCopyWithImpl<$Res, _$PostsI
   }) {
     return _then(_$PostsImpl(
       items: null == items
-          ? _value.items
+          ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as IList<Post>,
+              as List<Post>,
     ));
   }
 }
@@ -89,12 +89,19 @@ class __$$PostsImplCopyWithImpl<$Res> extends _$PostsCopyWithImpl<$Res, _$PostsI
 /// @nodoc
 @JsonSerializable()
 class _$PostsImpl extends _Posts {
-  _$PostsImpl({required this.items}) : super._();
+  _$PostsImpl({required final List<Post> items})
+      : _items = items,
+        super._();
 
   factory _$PostsImpl.fromJson(Map<String, dynamic> json) => _$$PostsImplFromJson(json);
 
+  final List<Post> _items;
   @override
-  final IList<Post> items;
+  List<Post> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_items);
+  }
 
   @override
   String toString() {
@@ -106,12 +113,12 @@ class _$PostsImpl extends _Posts {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PostsImpl &&
-            const DeepCollectionEquality().equals(other.items, items));
+            const DeepCollectionEquality().equals(other._items, _items));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(items));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_items));
 
   @JsonKey(ignore: true)
   @override
@@ -128,13 +135,13 @@ class _$PostsImpl extends _Posts {
 }
 
 abstract class _Posts extends Posts {
-  factory _Posts({required final IList<Post> items}) = _$PostsImpl;
+  factory _Posts({required final List<Post> items}) = _$PostsImpl;
   _Posts._() : super._();
 
   factory _Posts.fromJson(Map<String, dynamic> json) = _$PostsImpl.fromJson;
 
   @override
-  IList<Post> get items;
+  List<Post> get items;
   @override
   @JsonKey(ignore: true)
   _$$PostsImplCopyWith<_$PostsImpl> get copyWith => throw _privateConstructorUsedError;

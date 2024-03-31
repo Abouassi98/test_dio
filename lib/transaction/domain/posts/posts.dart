@@ -1,4 +1,3 @@
-import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'posts.freezed.dart';
@@ -7,7 +6,7 @@ part 'posts.g.dart';
 @freezed
 class Posts with _$Posts {
   factory Posts({
-    required IList<Post> items,
+    required List<Post> items,
   }) = _Posts;
   Posts._();
   factory Posts.fromJson(List<dynamic> json) => _$PostsFromJson({'items': json});
