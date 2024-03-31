@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import '../../../../core/infrastructure/network/main_api/api_callers/main_api_facade.dart';
 import '../../../../core/presentation/utils/riverpod_framework.dart';
-import '../../domain/transaction_history/posts/posts.dart';
-import '../../domain/transaction_history/users/users.dart';
+import '../../domain/posts/posts.dart';
+import '../../domain/users/users.dart';
 part 'transaction_remote_remote_data_source.g.dart';
 
 @riverpod

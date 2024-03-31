@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../domain/transaction_history/users/users.dart';
+import '../../domain/users/users.dart';
 
 class BokRechargeItem extends StatelessWidget {
   const BokRechargeItem({required this.item, super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../domain/transaction_history/posts/posts.dart';
+import '../../domain/posts/posts.dart';
 
 class TransactionItem extends StatelessWidget {
   const TransactionItem({required this.item, super.key});

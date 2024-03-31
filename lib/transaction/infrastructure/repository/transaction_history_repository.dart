@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import '../../../../core/presentation/utils/riverpod_framework.dart';
-import '../../domain/transaction_history/posts/posts.dart';
-import '../../domain/transaction_history/users/users.dart';
+import '../../domain/posts/posts.dart';
+import '../../domain/users/users.dart';
 import '../data_sourse/transaction_remote_remote_data_source.dart';
 
 part 'transaction_history_repository.g.dart';

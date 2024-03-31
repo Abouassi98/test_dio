@@ -1,6 +1,6 @@
 import '../../../../core/presentation/providers/provider_utils.dart';
 import '../../../../core/presentation/utils/riverpod_framework.dart';
-import '../../domain/transaction_history/users/users.dart';
+import '../../domain/users/users.dart';
 import '../../infrastructure/repository/transaction_history_repository.dart';
 part 'get_users_provider.g.dart';
 
